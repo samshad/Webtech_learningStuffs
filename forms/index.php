@@ -301,8 +301,8 @@
             <tr>
                 <td>
 	                <?php
-	                    echo "Name: $name <br>";
-	                    echo "Email: $email <br>";
+	                    echo "Name: $name<br>";
+	                    echo "Email: $email<br>";
 	                    echo "Date: $d$m$y<br>";
 	                    echo "Gender: $gender<br>";
 	                    echo "Degree: $checkbox<br>";
