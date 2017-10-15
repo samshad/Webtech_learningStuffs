@@ -201,7 +201,7 @@
 			                        $GLOBALS['gender'] = "Others";
 	                        }
 	
-	                        else{
+	                        else if($_SERVER["REQUEST_METHOD"] == "POST"){
 		                        $GLOBALS['ergender'] = " * Select one.";
 	                        }
                         }
@@ -214,7 +214,7 @@
 	                        if(isset($_REQUEST['BSc'])) $cnt++;
 	                        if(isset($_REQUEST['MSc'])) $cnt++;
 	
-	                        if($cnt < 2){
+	                        if($_SERVER["REQUEST_METHOD"] == "POST" and $cnt < 2){
 		                        $GLOBALS['ercheckbox'] = " * At least two of them must be selected.";
 	                        }
 	
@@ -228,10 +228,11 @@
                         
                         function bloodGroup(){
 	                        if(isset($_REQUEST['blood'])){
+	                            //if(empty($_REQUEST['blood'])) $GLOBALS['erblood'] = " * Must be selected.";
 		                        $GLOBALS['blood'] = $_REQUEST['blood'];
 	                        }
 	
-	                        else{
+	                        else if($_SERVER["REQUEST_METHOD"] == "POST" and empty($_REQUEST['blood'])){
 		                        $GLOBALS['erblood'] = " * Must be selected.";
 	                        }
                         }
@@ -242,7 +243,7 @@
                         
 					?>
 
-                    <form action = "index.php">
+                    <form action = "index.php" method = "POST">
                         Name:
                         <input name = "name" type = "text"/> <?php echo "$ername <br><br>" ?>
                         E-mail:
