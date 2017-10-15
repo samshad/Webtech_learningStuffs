@@ -289,7 +289,11 @@
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
                             <option value="B+">B+</option>
-                            <option value="B">B</option>
+                            <option value="B">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O">O-</option>
                         </select>
 	                    <?php echo "$erblood <br><br>" ?>
                         
@@ -302,12 +306,25 @@
             <tr>
                 <td>
 	                <?php
-	                    echo "Name: $name<br>";
-	                    echo "Email: $email<br>";
-	                    echo "Date: $d$m$y<br>";
-	                    echo "Gender: $gender<br>";
-	                    echo "Degree: $checkbox<br>";
-	                    echo "Blood Group: $blood<br>";
+	                    $toFile = fopen("form.txt", "w");
+	                    
+	                    if(!empty($name) && !empty($email) && !empty($d) && !empty($m) && !empty($y) && !empty($gender) && !empty($checkbox) && !empty($blood)){
+		                    echo "Name: $name<br>";
+		                    echo "Email: $email<br>";
+		                    echo "Date: $d$m$y<br>";
+		                    echo "Gender: $gender<br>";
+		                    echo "Degree: $checkbox<br>";
+		                    echo "Blood Group: $blood<br>";
+		                    
+		                    fwrite($toFile, "Name: $name\r\n");
+		                    fwrite($toFile, "Email: $email\r\n");
+		                    fwrite($toFile, "Date: $d$m$y\r\n");
+		                    fwrite($toFile, "Gender: $gender\r\n");
+		                    fwrite($toFile, "Degree: $checkbox\r\n");
+		                    fwrite($toFile, "Blood Group: $blood\r\n");
+                        }
+                        
+                        fclose($toFile);
 	                ?>
                 </td>
             </tr>
