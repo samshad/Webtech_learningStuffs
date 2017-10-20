@@ -3,7 +3,11 @@
 
 	function checkString($x, $y){
 		$i = strlen($x);
-		if(!(($x[$i-1] >= 'a' and $x[$i-1] <= 'z') || ($x[$i-1] >= 'A' and $x[$i-1] <= 'Z') || ($x[$i] >= '0' and $x[$i] <= '9')) and $y == 1){
+		if(!(($x[$i-1] >= 'a' and $x[$i-1] <= 'z') || ($x[$i-1] >= 'A' and $x[$i-1] <= 'Z') || ($x[$i-1] >= '0' and $x[$i-1] <= '9')) and $y == 1){
+			return false;
+		}
+		
+		if(!(($x[0] >= 'a' and $x[0] <= 'z') || ($x[0] >= 'A' and $x[0] <= 'Z'))){
 			return false;
 		}
 		

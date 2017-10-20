@@ -6,6 +6,11 @@
 			return false;
 		}
 		
+		$i = strlen($name);
+		if(!(($name[$i-1] >= 'a' and $name[$i-1] <= 'z') || ($name[$i-1] >= 'A' and $name[$i-1] <= 'Z'))){
+			return false;
+		}
+		
 		for($i = 0; $i < strlen($name); $i++){
 			if(!(($name[$i] >= 'a' and $name[$i] <= 'z') || ($name[$i] >= 'A' and $name[$i] <= 'Z') || $name[$i] == '.' || $name[$i] == '-' || $name[$i] == ' ')){
 				return false;
