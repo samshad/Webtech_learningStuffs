@@ -1,31 +1,31 @@
 <?php
-	var_dump($_REQUEST);
-	echo "<br><br>";
+	$email = $errorEmail = "";
 
 	function checkString($x, $y){
-		$f = true;
+		$i = strlen($x);
+		if(!(($x[$i-1] >= 'a' and $x[$i-1] <= 'z') || ($x[$i-1] >= 'A' and $x[$i-1] <= 'Z') || ($x[$i] >= '0' and $x[$i] <= '9')) and $y == 1){
+			return false;
+		}
 		
 		for($i = 0; $i < strlen($x); $i++){
 			if($y == 1){
 				if(!(($x[$i] >= 'a' and $x[$i] <= 'z') || ($x[$i] >= 'A' and $x[$i] <= 'Z') || ($x[$i] >= '0' and $x[$i] <= '9') || $x[$i] == '.' || $x[$i] == '_' || $x[$i] == '-')){
-					$f = false;
-					break;
+					return false;
 				}
 			}
 			
 			else{
 				if(!(($x[$i] >= 'a' and $x[$i] <= 'z') || ($x[$i] >= 'A' and $x[$i] <= 'Z'))){
-					$f = false;
-					break;
+					return false;
 				}
 			}
 		}
 		
-		return $f;
+		return true;
 	}
 	
-	if(isset($_REQUEST['email']) && !empty($_REQUEST['email'])){
-		$mail = $_REQUEST['email'];
+	if(isset($_REQUEST['email']) and !empty($_REQUEST['email'])){
+		$mail = trim($_REQUEST['email']);
 		
 		$at = 0;
 		$cnt = 0;
@@ -61,17 +61,15 @@
 		if(!checkString($a, 1) or !checkString($b, 2) or !checkString($c, 3)) $f = false;
 		
 		if(!$f){
-			echo "Insert the email address correctly.";
-			require "email.html";
+			$errorEmail = "* Invalid email address.";
 		}
 		
 		else{
-			echo "Email: " . $mail;
+			$email = $mail;
 		}
 	}
 	
 	else if($_SERVER["REQUEST_METHOD"] == "POST"){
-		echo "Fill all the fields.";
-		require "email.html";
+		$errorEmail = "* Please enter email address.";
 	}
 ?>

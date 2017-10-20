@@ -1,6 +1,6 @@
 <?php
-	var_dump($_REQUEST);
-	echo "<br><br>";
+	$script = $_SERVER['SCRIPT_NAME'];
+	$email = $error = "";
 
 	function checkString($x, $y){
 		$f = true;
@@ -61,17 +61,26 @@
 		if(!checkString($a, 1) or !checkString($b, 2) or !checkString($c, 3)) $f = false;
 		
 		if(!$f){
-			echo "Insert the email address correctly.";
-			require "email.html";
+			$error = "* Invalid email address.<br>";
 		}
 		
 		else{
-			echo "Email: " . $mail;
+			$email = $mail;
 		}
 	}
 	
 	else if($_SERVER["REQUEST_METHOD"] == "POST"){
-		echo "Fill all the fields.";
-		require "email.html";
-	}
+	    $error = "* Enter email address.";
+    }
 ?>
+
+<form action = "<?php echo $script; ?>" method = "POST">
+	<fieldset>
+		<legend>Forgot Password</legend>
+		Enter Email:
+		<input name = "email"/>
+        <?php echo $error; ?>
+		<hr>
+        <input type = "Submit"/>
+    </fieldset>
+</form>
