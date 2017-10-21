@@ -1,5 +1,5 @@
 <?php
-    $script = $_SERVER['SCRIPT_NAME'];
+    require "core.php";
 
     $name = $pass = $error = "";
 
@@ -23,7 +23,7 @@
     }
 ?>
 
-<form action = "<?php echo $script; ?>" method = "POST">
+<form action = "<?php echo $scriptName; ?>" method = "POST">
     <fieldset>
         <legend>Login</legend>
         <?php echo $error; ?>

@@ -21,20 +21,20 @@
 		</td>
 	</tr>
 	<tr>
-        <td>
-            <h4>Account</h4>
-            <hr>
-            <ui>
-                <li><a href="loggedinHome.php">Dashboard</a></li>
-                <li><a href="viewProfile.php">View Profile</a></li>
-                <li><a href="editProfile.php">Edit Profile</a></li>
-                <li><a href="">Change Profile Picture</a></li>
-                <li><a href="changePass.php">Change Password</a></li>
-                <li><a href="">Logout</a></li>
-            </ui>
-        </td>
+		<td>
+			<h4>Account</h4>
+			<hr>
+			<ui>
+				<li><a href="loggedinHome.php">Dashboard</a></li>
+				<li><a href="viewProfile.php">View Profile</a></li>
+				<li><a href="editProfile">Edit Profile</a></li>
+				<li><a href="">Change Profile Picture</a></li>
+				<li><a href="changePass.php">Change Password</a></li>
+				<li><a href="">Logout</a></li>
+			</ui>
+		</td>
 		<td colspan="2">
-			<h1>Welcome ?Name?.</h1>
+			<?php include "in_back/in_changePass.php"; ?>
 		</td>
 	</tr>
 	<tr>

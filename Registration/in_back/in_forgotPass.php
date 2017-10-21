@@ -1,5 +1,5 @@
 <?php
-	$script = $_SERVER['SCRIPT_NAME'];
+    require "core.php";
 	$email = $error = "";
 
 	function checkString($x, $y){
@@ -74,7 +74,7 @@
     }
 ?>
 
-<form action = "<?php echo $script; ?>" method = "POST">
+<form action = "<?php echo $scriptName; ?>" method = "POST">
 	<fieldset>
 		<legend>Forgot Password</legend>
 		Enter Email:

@@ -13,7 +13,7 @@
 	<table align = "center" width = 90% border = "1">
 		<tr>
 			<td>
-				<a href="home.php"><img src = "raw/burger.JPG" alt = "Burger Logo"></a>
+				<a href="home.php"><img src = "in_back/burger.JPG" alt = "Burger Logo"></a>
 			</td>
 			<td align = "right" colspan="2">
 				<a href="login.php">Login </a> |

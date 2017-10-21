@@ -1,5 +1,5 @@
 <?php
-    $script = $_SERVER['SCRIPT_NAME'];
+    require "core.php";
     
     require "name/name.php";
     require "email/email.php";
@@ -9,7 +9,7 @@
     require "dob/dob.php";
 ?>
 
-<form action="<?php echo $script; ?>" method = "POST">
+<form action="<?php echo $scriptName; ?>" method = "POST">
     <fieldset>
         <legend>Registration</legend>
         First Name:

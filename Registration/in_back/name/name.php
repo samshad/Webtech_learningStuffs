@@ -1,7 +1,7 @@
 <?php
 	$firstName = $lastName = $errorName = "";
 	
-	function check($name){
+	function checkName($name){
 		if(!(($name[0] >= 'a' and $name[0] <= 'z') || ($name[0] >= 'A' and $name[0] <= 'Z'))){
 			return false;
 		}
@@ -29,7 +29,7 @@
 		}
 		
 		else{
-			if(!check($first) or !check($last)){
+			if(!checkName($first) or !checkName($last)){
 				$errorName = "* Invalid name.";
 			}
 			
