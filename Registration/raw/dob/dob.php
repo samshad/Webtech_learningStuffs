@@ -1,7 +1,7 @@
 <?php
 	$day = $month = $year = $errorDob = "";
 	
-	function check($x){
+	function checkDob($x){
 		for($i = 0; $i < strlen($x); $i++){
 			if(!($x[$i] >= '0' and $x[$i] <= '9')){
 				return false;
@@ -16,7 +16,7 @@
 		$m = trim($_REQUEST['month']);
 		$y = trim($_REQUEST['year']);
 		
-		if(!check($d) or !check($m) or !check($y)){
+		if(!checkDob($d) or !checkDob($m) or !checkDob($y)){
 			$errorDob = "* Please insert your real date of birth.";
 		}
 		

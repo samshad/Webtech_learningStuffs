@@ -6,6 +6,7 @@
     require "username/userName.php";
     require "password/password.php";
     require "gender/gender.php";
+    require "dob/dob.php";
 ?>
 
 <form action="<?php echo $script; ?>" method = "POST">
@@ -52,6 +53,7 @@
                     <th align = "center"><input name = "year" maxlength = "4"/>  (dd/mm/yyyy)</th>
                 </tr>
             </table>
+	        <?php echo $errorDob; ?>
         </fieldset>
         <hr>
         <input type = "submit"/>
@@ -59,5 +61,5 @@
 </form>
 
 <?php
-    echo $gender;
+
 ?>
