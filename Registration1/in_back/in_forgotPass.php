@@ -69,8 +69,8 @@
 		}
 	}
 	
-	else if($_SERVER["REQUEST){
-	   
+	else if($_SERVER["REQUEST_METHOD"] == "POST"){
+	    $error = "* Enter email address.";
     }
 ?>
 

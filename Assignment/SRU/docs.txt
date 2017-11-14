@@ -1,0 +1,6 @@
+Name, BPrice, SPrice, Display
+asdfsfd, 32, 1, Yes
+asdf, 32, 1, No
+asdfw, 23, 11234234, Yes
+rtwertwe, 23, 22222, Yes
+sruss, 54, 2, Yes

@@ -1,14 +1,13 @@
 <?php
-	$scriptName = $_SERVER['SCRIPT_NAME'];
+	//$scriptName = $_SERVER['SCRIPT_NAME'];
 
 	session_start();
 
-    if(!isset($_SESSION['userList'])){
+    /*if(!isset($_SESSION['userList'])){
         $_SESSION['userList'] = array();
-		echo "set hoise...";
-    }
+    }*/
 
-	$userId = count($_SESSION['userList']);
+	//$userId = count($_SESSION['userList']);
 
     /*if($_SERVER["REQUEST_METHOD"] == "POST" and !empty($_REQUEST['name'])){
         $name = $_REQUEST['name'];
@@ -16,5 +15,5 @@
     }*/
 	//var_dump($userId);
 
-	//var_dump($_SESSION);
+	var_dump($_SESSION);
 ?>

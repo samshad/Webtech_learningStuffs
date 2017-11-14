@@ -1,7 +1,7 @@
 <?php
     require "core.php";
 
-    /*$userName = $pass = $error = "";
+    $name = $pass = $error = "";
 
     if(isset($_REQUEST['name'])){
         $tmpName = $_REQUEST['name'];
@@ -9,7 +9,7 @@
             $error = "* Invalid User Name or Password.<br>";
         }
 
-        $userName = $tmpName;
+        $name = $tmpName;
     }
 
     if(isset($_REQUEST['pass'])){
@@ -20,12 +20,13 @@
         }
 
         $pass = $tmpPass;
-    }*/
+    }
 ?>
 
 <form action = "<?php echo $scriptName; ?>" method = "POST">
     <fieldset>
         <legend>Login</legend>
+        <?php echo $error; ?>
         User Name:
         <input name = "name" /><br>
         Password :
@@ -36,17 +37,3 @@
     <input type = "Submit"/>
     <a href = "forgotPass.php">Forgot Password?</a>
 </form>
-
-<?php
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-        //$userList = $_SESSION['userList'];
-        foreach($_SESSION['userList'] as $user){
-            if($user['userName'] == $_REQUEST['name']){
-                if($user['password'] == $_REQUEST['pass']){
-                    header("Location: loggedinHome.php");
-                }
-            }
-        }
-        echo "Pailo na to...";
-    }
-?>
